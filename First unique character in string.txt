@@ -1,0 +1,28 @@
+1)First unique character in the String
+   ----------------------------------------------
+
+class Solution {
+    public int firstUniqChar(String s) {
+        if(s.length()==0)   return -1;
+        if(s.length()==1)   return 0;
+        int index=-1;
+        LinkedHashMap<Character,Integer>a=new LinkedHashMap<>();
+        for(int i=0;i<s.length();i++)
+        {
+            char b=s.charAt(i);
+            if(!a.containsKey(b))   a.put(b,1);
+            else
+                a.put(b,a.get(b)+1);
+        }
+        for(Map.Entry<Character,Integer>entry:a.entrySet())
+        {
+                int c=entry.getValue();
+                if(c==1)
+                {
+                    index=s.indexOf(entry.getKey());
+                    break;
+                }
+        }
+        return index;
+    }
+}
