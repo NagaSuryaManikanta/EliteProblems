@@ -1,0 +1,13 @@
+class Solution {
+    public char repeatedCharacter(String s) {
+        HashSet<Character>a=new HashSet();
+
+        for(int i=0;i<s.length();i++)
+        {
+            char b=s.charAt(i);
+            if(a.contains(b))   return b;
+            a.add(b);
+        }
+        return 'c';
+    }
+}
