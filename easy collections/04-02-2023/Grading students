@@ -1,0 +1,16 @@
+public static List<Integer> gradingStudents(List<Integer> grades) {
+    // Write your code here
+    List<Integer>grade=new ArrayList<>();
+    for(Integer i:grades)
+    {
+        if(i<38)
+        {
+            grade.add(i);
+            continue;
+        }
+        int a=i%5;
+        if(a>2) i=i+(5-a);
+        grade.add(i);
+    }
+         return grade;
+    }
