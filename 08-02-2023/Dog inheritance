@@ -1,0 +1,54 @@
+import java.io.*;
+import java.util.*;
+class Dog
+{
+    private String name;
+    Dog(String n)
+    {
+        this.name=n;
+    }
+    public String getDogName()
+    {
+        return this.name;
+    }
+    
+}
+class Greyhound extends Dog
+{
+    private String colour;
+    private int weight;
+    Greyhound(String name,String colour,int weight)
+    {
+        super(name);
+        this.colour=colour;
+        this.weight=weight;
+    }
+    
+    public String getName()
+    {
+        return super.getDogName();
+    }
+    public String getColor()
+    {
+        return this.colour;
+    }
+    public int getWeight()
+    {
+    return this.weight;
+    }
+}
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        String name = in.nextLine();
+        String color = in.nextLine();
+        int weight = in.nextInt();
+        Greyhound pup = new Greyhound(name, color, weight);
+        System.out.println(pup.getName());
+        System.out.println(pup.getColor());
+        System.out.println(pup.getWeight());
+        System.out.println(pup.getName()+" is "+pup.getColor()+" in color and his weight is "+pup.getWeight()+"Kg");
+        System.out.println("Superclass:"+pup.getClass().getSuperclass().getName());
+    }
+    }
